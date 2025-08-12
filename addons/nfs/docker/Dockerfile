@@ -1,4 +1,4 @@
-FROM alpine:3.22
+FROM alpine:3.17
 
 RUN apk add python3 bash nfs-utils
 
