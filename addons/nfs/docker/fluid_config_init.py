@@ -31,8 +31,7 @@ MNT_TO=$targetPath
 
 trap "umount ${MNT_TO}" SIGTERM
 mkdir -p ${MNT_TO}
-mount -t nfs ${MNT_FROM} ${MNT_TO}
-# mount -t nfs ${MNT_FROM} ${MNT_TO} -o ${MOUNT_OPTIONS},nolock
+mount -t nfs ${MNT_FROM} ${MNT_TO} -o ${MOUNT_OPTIONS},nolock
 sleep inf
 """
 
