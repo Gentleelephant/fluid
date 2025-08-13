@@ -23,7 +23,7 @@ with open("/etc/fluid/config.json", "r") as f:
 rawStr = rawStr[0]
 
 script = """
-#!/bin/sh
+#!/bin/bash
 set -ex
 MNT_FROM=$mountPoint
 MNT_TO=$targetPath
