@@ -104,7 +104,7 @@ func (e *AlluxioEngine) transformFuse(runtime *datav1alpha1.AlluxioRuntime, data
 	// parse fuse container network mode
 	value.Fuse.HostNetwork = datav1alpha1.IsHostNetwork(runtime.Spec.Fuse.NetworkMode)
 
-	fmt.Println("<<==========>> value.Fuse:", value.Fuse)
+	fmt.Printf("<<==========>> value.Fuse: %+v\n", value.Fuse)
 
 	value.Fuse.Enabled = true
 
