@@ -91,6 +91,8 @@ func (e *AlluxioEngine) generateAlluxioValueFile(runtime *datav1alpha1.AlluxioRu
 		return valueFileName, err
 	}
 
+	fmt.Printf("<<-------------->> valueFile: %p\n", valueFile)
+
 	valueFileName = valueFile.Name()
 	e.Log.V(1).Info("Save the values file", "valueFile", valueFileName)
 
