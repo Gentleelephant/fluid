@@ -384,7 +384,7 @@ fuse:
   # These options are specific to the FUSE daemon
   jvmOptions:
     - "-XX:MaxDirectMemorySize=2g"
-  hostNetwork: true
+  hostNetwork: false
   # hostPID requires escalated privileges
   hostPID: true
   dnsPolicy: ClusterFirstWithHostNet
