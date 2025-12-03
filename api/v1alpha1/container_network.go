@@ -29,9 +29,9 @@ const (
 
 func IsHostNetwork(n NetworkMode) bool {
 	switch n {
-	case ContainerNetworkMode:
-		return false
-	default:
+	case HostNetworkMode:
 		return true
+	default:
+		return false
 	}
 }
