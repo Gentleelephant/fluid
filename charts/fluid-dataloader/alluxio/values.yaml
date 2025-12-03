@@ -107,4 +107,10 @@ dataloader:
 
   # Optional
   # Description: optional container resources
-  resources: {}
+  resources:
+    limits:
+      cpu: "1"
+      memory: "1Gi"
+    request:
+      cpu: "1"
+      memory: "1Gi"
