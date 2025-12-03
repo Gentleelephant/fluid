@@ -48,7 +48,7 @@ worker:
   #      cpu: "4"
   #      memory: "4G"
   replicaCount: 0
-  hostNetwork: true
+  hostNetwork: false
   livenessProbe:
   readinessProbe:
 
@@ -69,7 +69,7 @@ fuse:
   args: []
   livenessProbe:
   readinessProbe:
-  hostNetwork: true
+  hostNetwork: false
   hostPID: false
   configValue: ""
   configStorage: "configmap"
