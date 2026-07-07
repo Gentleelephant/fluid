@@ -74,9 +74,9 @@ MNT_TO=$targetPath
 trap "umount ${MNT_TO}" SIGTERM
 mkdir -p ${MNT_TO}
 if [ -n "$MOUNT_OPTIONS" ]; then
-    mount -t nfs ${MNT_FROM} ${MNT_TO} -o ${MOUNT_OPTIONS}
+    mount -t nfs -o "${MOUNT_OPTIONS}" "${MNT_FROM}" "${MNT_TO}"
 else
-    mount -t nfs ${MNT_FROM} ${MNT_TO}
+    mount -t nfs "${MNT_FROM}" "${MNT_TO}"
 fi
 sleep inf
 """

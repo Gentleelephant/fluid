@@ -29,7 +29,7 @@ MNT_TO=$targetPath
 
 trap "umount ${MNT_TO}" SIGTERM
 mkdir -p ${MNT_TO}
-mount -t nfs ${MNT_FROM} ${MNT_TO}
+mount -t nfs "${MNT_FROM}" "${MNT_TO}"
 sleep inf
 """
 
@@ -60,7 +60,7 @@ MNT_TO=$targetPath
 
 trap "umount ${MNT_TO}" SIGTERM
 mkdir -p ${MNT_TO}
-mount -t nfs ${MNT_FROM} ${MNT_TO}
+mount -t nfs "${MNT_FROM}" "${MNT_TO}"
 
 sleep inf
 ```
@@ -74,10 +74,10 @@ Package parameter resolution scripts, mount scripts, and related libraries into 
 
 ```dockerfile
 FROM alpine
-RUN apk add python3 bash nfs-utils
+RUN apk add python3 bash nfs-utils util-linux
 ADD ./fluid_config_init.py /
 ```
-In addition to Python scripts, you also need to **install the python environment and nfs utils NFS client** on the base image.
+In addition to Python scripts, you also need to **install the python environment, nfs-utils NFS client, and util-linux** on the base image. The util-linux package provides a full `flock` implementation required by NFSv3 statd startup.
 
 ## Demo
 ### Create and Deploy ThinRuntimeProfile Resource

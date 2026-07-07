@@ -29,7 +29,7 @@ MNT_TO=$targetPath
 
 trap "umount ${MNT_TO}" SIGTERM
 mkdir -p ${MNT_TO}
-mount -t nfs ${MNT_FROM} ${MNT_TO}
+mount -t nfs "${MNT_FROM}" "${MNT_TO}"
 sleep inf
 """
 
@@ -60,7 +60,7 @@ MNT_TO=$targetPath
 
 trap "umount ${MNT_TO}" SIGTERM
 mkdir -p ${MNT_TO}
-mount -t nfs ${MNT_FROM} ${MNT_TO}
+mount -t nfs "${MNT_FROM}" "${MNT_TO}"
 
 sleep inf
 ```
@@ -73,11 +73,11 @@ sleep inf
 
 ```dockerfile
 FROM alpine
-RUN apk add python3 bash nfs-utils
+RUN apk add python3 bash nfs-utils util-linux
 ADD ./fluid_config_init.py /
 ```
 
-除了 Python 脚本外，还需要在基镜像上**安装 python 环境和 nfs-utils NFS 客户端**。
+除了 Python 脚本外，还需要在基镜像上**安装 python 环境、nfs-utils NFS 客户端和 util-linux**。util-linux 提供 NFSv3 statd 启动所需的完整 `flock` 实现。
 
 ## 使用示例
 ### 创建并部署 ThinRuntimeProfile 资源

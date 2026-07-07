@@ -1,6 +1,6 @@
 FROM alpine:3.17
 
-RUN apk add python3 bash nfs-utils
+RUN apk add python3 bash nfs-utils util-linux
 
 ADD fluid_config_init.py /
 ADD entrypoint.sh /usr/local/bin
