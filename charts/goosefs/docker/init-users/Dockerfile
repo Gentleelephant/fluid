@@ -1,6 +1,6 @@
-FROM centos:centos8.2.2004
+FROM alpine:3.24
 
-RUN yum install -y net-tools
+RUN apk add --no-cache bash shadow net-tools
 
 COPY *.sh /
 
